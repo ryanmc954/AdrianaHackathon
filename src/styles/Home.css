@@ -1,0 +1,29 @@
+.homepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 0 auto;
+    padding: 0;
+    width: calc(100vw - 80%);
+    height: 100vh;
+}
+
+.maincontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.asset-container {
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    height: 800px;
+    width: 600px;
+    background-color: white;
+    border-radius: 25px;
+}
