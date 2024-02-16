@@ -3,7 +3,36 @@ import Home from './components/Home'
 import Account from './components/Account'
 import './App.css'
 
+const environment_var = import.meta.env.VITE_API_KEY
+
 export default function App() {
+
+  // console.log(environment_var)
+
+  // placeholder register a new user
+  const registerUser = async () => {
+    const response = await fetch(`https://garchi.co.uk/api/v2/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${environment_var}`,
+      },
+      body: JSON.stringify({
+        "firstname": "testuser",
+        "lastname": "testuser",
+        "email": "test@test.com",
+        "password": "password",
+        "password_confirmation": "password",
+        "contact": "1234567890",
+        "cannotify": "true"
+      })
+    })
+    const data = await response.json()
+    console.log(data)
+  }
+
+  registerUser()
 
   return (
     <>
