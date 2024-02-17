@@ -2,6 +2,13 @@ import { Routes, Route, Link, Outlet } from 'react-router-dom'
 import Home from './components/Home'
 import Account from './components/Account'
 import './App.css'
+import csrf from "../../src/csrf";
+
+export default async function handler(req, res) {
+  await csrf(req, res);
+  res.status(200).json({ name: "John Doe" });
+}
+
 
 const environment_var = import.meta.env.VITE_API_KEY
 
